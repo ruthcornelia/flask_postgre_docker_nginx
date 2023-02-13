@@ -14,9 +14,9 @@ with open(path + "/rf.pkl", "rb") as model:
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Tadasehotori1@host.docker.internal:5432/predictions_log'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@host.docker.internal:5432/predictions_log'
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    app.secret_key = 'Tadasehotori1'
+    app.secret_key = 'password'
 
     db = SQLAlchemy(app)
     swagger = Swagger(app)
